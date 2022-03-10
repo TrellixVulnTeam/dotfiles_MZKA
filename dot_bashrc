@@ -124,7 +124,14 @@ alias sbashrc='source /home/sirgius/.bashrc'
 alias ni3='nano ~/.config/i3/config'
 alias apython39='source ~/venv/bin/activate'
 alias cai_CENER__EDA='source ~/.env/cai_CENER__EDA/bin/activate'
-
+#Press f to correct code
+alias f='fuck -y'
+#History to check commands
+alias h='history'
+alias hg='history | grep'
 export LD_LIBRARY_PATH='/home/sirgius/CENER---EDA2/Scripts/'
 export TONATIUH_ROOT='/home/sirgius/CENER---EDA2/Tonatiuh/'
 export BROWSER=w3m
+export EDITOR=nano
+#Use thefuck or fuck or f
+eval $(thefuck --alias)
