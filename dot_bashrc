@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=1000000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -129,9 +129,19 @@ alias f='fuck -y'
 #History to check commands
 alias h='history'
 alias hg='history | grep'
+function killtarget() { pgrep "$@" | xargs kill -9 ;}
+function catg() { cat $1 | grep $2 ;}
+
+
 export LD_LIBRARY_PATH='/home/sirgius/CENER---EDA2/Scripts/'
 export TONATIUH_ROOT='/home/sirgius/CENER---EDA2/Tonatiuh/'
-export BROWSER=w3m
+#export BROWSER=w3m
+export BROWSER=firefox
 export EDITOR=nano
 #Use thefuck or fuck or f
-eval $(thefuck --alias)
+#Conflicts with cat for some reason
+#eval $(thefuck --alias)
+
+alias ls="ls -h --color=auto"
+alias dockerkill="docker ps -q | xargs docker kill"
+export PS1="\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]"
