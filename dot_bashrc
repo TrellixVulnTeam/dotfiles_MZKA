@@ -145,3 +145,10 @@ export EDITOR=nano
 alias ls="ls -h --color=auto"
 alias dockerkill="docker ps -q | xargs docker kill"
 export PS1="\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]"
+function gsm() {
+git commit -S -m "$@"
+}
+alias cowluck='fortune|cowsay'
+function lsn() {
+ls *"$@"*
+}
